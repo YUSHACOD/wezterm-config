@@ -3,14 +3,14 @@ local colors = require('colors.custom')
 
 return {
 	term = "xterm-256color",
-	animation_fps = 60,
-	max_fps = 144,
-	front_end = 'OpenGL',
+	animation_fps = 1,
+	max_fps = 60,
+	front_end = 'WebGpu',
 
 	-- font
 	font = wezterm.font("JetBrainsMonoNL Nerd Font Mono"),
 	cell_width = 1,
-	font_size = 11.0,
+	font_size = 10.0,
 
 	-- color scheme
 	color_scheme = "Cloud (terminal.sexy)",
@@ -21,7 +21,7 @@ return {
 	cursor_blink_rate = 500,
 
 	-- background
-	window_background_opacity = 0.75,
+	window_background_opacity = 0.85,
 
 
 

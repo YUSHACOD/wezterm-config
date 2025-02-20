@@ -8,7 +8,7 @@ if platform.is_mac then
 	mod.SUPER = 'SUPER'
 	mod.SUPER_REV = 'SUPER|CTRL'
 elseif platform.is_win or platform.is_linux then
-	mod.SUPER = 'ALT|CTRL|SHIFT' -- to not conflict with Windows key shortcuts
+	mod.SUPER = 'CTRL|SHIFT|ALT' -- to not conflict with Windows key shortcuts
 	mod.SUPER_REV = 'ALT|CTRL'
 end
 
@@ -81,7 +81,7 @@ local keys = {
 	-- panes --
 	-- panes: split panes
 	{
-		key = [[-]],
+		key = [[/]],
 		mods = mod.SUPER_REV,
 		action = act.SplitVertical({ domain = 'CurrentPaneDomain' }),
 	},
@@ -113,10 +113,10 @@ local keys = {
 		-- toggling opacity
 		action = wezterm.action_callback(function(window, _)
 			local overrides = window:get_config_overrides() or {}
-			if overrides.window_background_opacity == 0.9 then
-				overrides.window_background_opacity = 0.75
+			if overrides.window_background_opacity == 1.0 then
+				overrides.window_background_opacity = 0.85
 			else
-				overrides.window_background_opacity = 0.9
+				overrides.window_background_opacity = 1.0
 			end
 			window:set_config_overrides(overrides)
 		end),
